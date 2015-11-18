@@ -142,7 +142,7 @@
       "metadata": {
         "description": "The address of ILB for SQL Server AlwaysOn listener"
       },
-      "defaultValue": "10.0.1.10"
+      "defaultValue": "10.0.0.10"
     },
 
     "adminUsername": {
@@ -238,7 +238,7 @@
     "deploySqlWitnessShare": "deploySqlWitnessShare",
     "deploySqlWitnessShareId": "[concat('Microsoft.Resources/deployments/', variables('deploySqlWitnessShare'))]",
     "deploySqlWitnessShareTemplateUrl": "[concat(parameters('assetLocation'),'/DeploySqlWitnessShare.json')]",
-    "sqlWitnessSharePath" : "[concat(parameters('dnsPrefix'),'-fsw')]",
+    "sqlWitnessSharePath" : "[concat(parameters('vmNamePrefix'),'-fsw')]",
     "sqlWitnessVmNamePrefix": "[concat(parameters('vmNamePrefix'),'-SqlW-')]",
     "sqlwVMName": "[concat(variables('sqlWitnessVmNamePrefix'),'0')]",
 
@@ -251,9 +251,9 @@
 
     "sqlLBName": "sqlLoadBalancer",
 
-    "sqlAOEPName": "[concat(parameters('dnsPrefix'),'-hadr')]",
-    "sqlAOAGName": "[concat(parameters('dnsPrefix'),'-ag')]",
-    "sqlAOListenerName": "[concat(parameters('dnsPrefix'),'ag-listener')]",
+    "sqlAOEPName": "[concat(parameters('vmNamePrefix'),'-hadr')]",
+    "sqlAOAGName": "[concat(parameters('vmNamePrefix'),'-ag')]",
+    "sqlAOListenerName": "[concat(parameters('vmNamePrefix'),'ag-listener')]",
 
     "sqlAvailabilitySetName": "sqlAvailabilitySet"
   },
