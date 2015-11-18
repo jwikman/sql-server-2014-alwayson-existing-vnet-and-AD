@@ -103,15 +103,15 @@
       "metadata": {
         "description": "The name of the existing VNET"
       },
-      "defaultValue": "vnet-01"
+      "defaultValue": "vnet01"
     },
 
     "sqlSubnetName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the existing SQL subnet in the existing VNET"
+        "description": "The name of the existing subnet in the existing VNET to which the SQL VMs should be deployed"
       },
-      "defaultValue": "Subnet-2"
+      "defaultValue": "default"
     },
 
     "domainName": {
