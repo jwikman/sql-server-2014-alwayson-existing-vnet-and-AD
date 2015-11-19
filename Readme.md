@@ -71,15 +71,22 @@ You will be prompted for the following parameters
 
 |Name|Description|
 |:---|:---------------------|
-|virtualNetworkName|Name of the existing Virtual Network|
-|sqlSubnetName|Name of the existing Subnet on which to deploy the SQL VMs|
-|sqlVMName|The prefix for the SQL VM Names|
-|windowsImagePublisher|The name of the pulisher of the AD and Witness Image|
-|windowsImageOffer|The Offer Name for the Image used by AD and Witness VMs|
-|windowsImageSKU|The Image SKU for the AD and Witness Image|
-|sqlImagePublisher|The name of the pulisher of the SQL Image|
-|sqlImageOffer|The Offer Name for the Image used by SQL|
-|sqlImageSKU|The Image SKU for the SQL Image|
-|windowsDiskSize|The size of the VHD allocated for AD and Witness VMs Data Disk|
-|sqlDiskSize|The size of the VHD allocated for SQL VMs Data and Log Disks|
-|domainName|The name of the existing AD Domain|
+|newStorageAccountNamePrefix|Naming prefix for each new storage account created. Three storage accounts will be created using this string as a prefix for the name. 18-char max, lowercase alpha|
+|storageAccountType|Type of new Storage Accounts (Standard_LRS, Standard_GRS, Standard_RAGRS or Premium_LRS) to be created to store VM disks|
+|vmNamePrefix|Naming prefix for each VM name. 8-char max, lowercase alpha|
+|sqlVMSize|Size of the SQL VM instances to be created|
+|sqlWitnessVMSize|Size of the Witness VM instance to be created|
+|sqlServerServiceAccountUserName|Service account name for SQL Server services|
+|sqlServerServiceAccountPassword|Service account password for SQL Server services|
+|virtualNetworkId|Resource ID of the existing VNET. You can find the Resource ID for the VNET on the Properties blade of the VNET.|
+|sqlSubnetName|Name of the existing subnet in the existing VNET to which the SQL & Witness VMs should be deployed|
+|domainName|DNS domain name for existing Active Directory domain|
+|adPDCVMName|Computer name of the existing Primary AD domain controller & DNS server|
+|primaryAdIpAddress|IP address of the existing Primary AD domain controller & DNS server|
+|secondaryAdIpAddress|IP address of the existing Secondary AD domain controller & DNS server|
+|sqlLBIPAddress|IP address of ILB for the new SQL Server AlwaysOn listener to be created|
+|adminUsername|Name of an existing Admin user account for the Active Directory domain|
+|adminPassword|Password for the existing Admin user account for the Active Directory domain|
+|location|Region in which to deploy the new resources|
+|dataBaseNames|An array of database names. Each database will be created and added to the availability group|
+|assetLocation|Location of resources upon which this template is dependent, such as nested templates and DSC modules|

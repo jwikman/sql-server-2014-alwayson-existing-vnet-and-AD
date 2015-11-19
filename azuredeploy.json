@@ -6,7 +6,7 @@
     "newStorageAccountNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The prefix of the new storage accounts created to store VM disk. Three storage accounts will be created using this string as a prefix for the name. 18-char max, lowercase alpha"
+        "description": "Naming prefix for each new storage account created. Three storage accounts will be created using this string as a prefix for the name. 18-char max, lowercase alpha"
       }
     },
 
@@ -19,7 +19,7 @@
         "Premium_LRS"
       ],
       "metadata": {
-        "description": "The type of new Storage Accounts to be created to store the SQL VM disks"
+        "description": "Type of new Storage Accounts (Standard_LRS, Standard_GRS, Standard_RAGRS or Premium_LRS) to be created to store VM disks"
       },
       "defaultValue": "Premium_LRS"
     },
@@ -27,7 +27,7 @@
     "vmNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The Prefix for the SQL VM names. 8-char max, lowercase alpha"
+        "description": "Naming prefix for each VM name. 8-char max, lowercase alpha"
       }
     },
 
@@ -52,7 +52,7 @@
         "Standard_DS14"
       ],
       "metadata": {
-        "description": "The size of the SQL VM instances to be created"
+        "description": "Size of the SQL VM instances to be created"
       },
       "defaultValue": "Standard_DS3"
     },
@@ -78,7 +78,7 @@
         "Standard_DS14"
       ],
       "metadata": {
-        "description": "The size of the Witness VM instance to be created"
+        "description": "Size of the Witness VM instance to be created"
       },
       "defaultValue": "Standard_DS1"
     },
@@ -86,7 +86,7 @@
     "sqlServerServiceAccountUserName": {
       "type": "string",
       "metadata": {
-        "description": "The SQL Server Service account name"
+        "description": "Service account name for SQL Server services"
       },
       "defaultValue": "sqlservice"
     },
@@ -94,7 +94,7 @@
     "sqlServerServiceAccountPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "The SQL Server Service account password"
+        "description": "Service account password for SQL Server services"
       }
     },
 
@@ -108,7 +108,7 @@
     "sqlSubnetName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the existing subnet in the existing VNET to which the SQL VMs should be deployed"
+        "description": "Name of the existing subnet in the existing VNET to which the SQL & Witness VMs should be deployed"
       },
       "defaultValue": "default"
     },
@@ -116,21 +116,21 @@
     "domainName": {
       "type": "string",
       "metadata": {
-        "description": "The existing Active Directory DNS domain name"
+        "description": "DNS domain name for existing Active Directory domain"
       }
     },
 
     "adPDCVMName": {
       "type": "string",
       "metadata": {
-        "description": "The computer name of the existing Primary AD domain controller & DNS Server"
+        "description": "Computer name of the existing Primary AD domain controller & DNS server"
       }
     },
 
     "primaryAdIpAddress": {
       "type": "string",
       "metadata": {
-        "description": "The IP address of the existing Primary AD domain controller"
+        "description": "IP address of the existing Primary AD domain controller & DNS server"
       },
       "defaultValue": "10.0.0.4"
     },
@@ -138,7 +138,7 @@
     "secondaryIpAddress": {
       "type": "string",
       "metadata": {
-        "description": "The IP address of the existing Secondary AD domain controller"
+        "description": "IP address of the existing Secondary AD domain controller & DNS server"
       },
       "defaultValue": "10.0.0.5"
     },
@@ -146,7 +146,7 @@
     "sqlLBIPAddress": {
       "type": "string",
       "metadata": {
-        "description": "The address of ILB for the new SQL Server AlwaysOn listener to be created"
+        "description": "IP address of ILB for the new SQL Server AlwaysOn listener to be created"
       },
       "defaultValue": "10.0.0.10"
     },
@@ -154,7 +154,7 @@
     "adminUsername": {
       "type": "string",
       "metadata": {
-        "description": "The name of the existing Administrator user account for the Active Directory domain"
+        "description": "Name of an existing Admin user account for the Active Directory domain"
       },
       "defaultValue": "sqlAdministrator"
     },
@@ -162,7 +162,7 @@
     "adminPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "The password for the existing Administrator user account for the Active Directory domain"
+        "description": "Password for the existing Admin user account for the Active Directory domain"
       }
     },
 
@@ -183,14 +183,14 @@
         "Japan West"
       ],
       "metadata": {
-        "description": "The region in which to deploy the new resources"
+        "description": "Region in which to deploy the new resources"
       }
     },
 
     "dataBaseNames": {
       "type": "array",
       "metadata": {
-        "description": "An array of databases name, each database will be created and added to the availability group"
+        "description": "An array of database names. Each database will be created and added to the availability group"
       },
       "defaultValue": [ "testdb1", "testdb2" ]
     },
@@ -198,7 +198,7 @@
     "assetLocation": {
       "type": "string",
       "metadata": {
-        "description": "The location of resources that the script is dependent on such as linked templates and DSC modules"
+        "description": "Location of resources upon which this template is dependent, such as nested templates and DSC modules"
       },
       "defaultValue": "https://raw.githubusercontent.com/robotechredmond/sql-server-2014-alwayson-dsc/master"
     }
