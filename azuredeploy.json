@@ -6,7 +6,7 @@
     "newStorageAccountNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The prefix of the new storage accounts created to store the SQL VM disks. Three storage accounts will be created using this string as a prefix for the name"
+        "description": "The prefix of the new storage accounts created to store VM disk. Three storage accounts will be created using this string as a prefix for the name. 18-char max, lowercase alpha"
       }
     },
 
@@ -27,7 +27,7 @@
     "vmNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The Prefix for the SQL VM names"
+        "description": "The Prefix for the SQL VM names. 8-char max, lowercase alpha"
       }
     },
 
@@ -101,7 +101,7 @@
     "virtualNetworkId": {
       "type": "string",
       "metadata": {
-        "description": "Resource ID of the existing VNET"
+        "description": "Resource ID of the existing VNET. You can find the Resource ID for the VNET on the Properties blade of the VNET."
       }
     },
 
@@ -123,7 +123,7 @@
     "adPDCVMName": {
       "type": "string",
       "metadata": {
-        "description": "The computer name of an existing Active Directory domain controller & DNS Server"
+        "description": "The computer name of the existing Primary AD domain controller & DNS Server"
       }
     },
 
@@ -180,8 +180,7 @@
         "East Asia",
         "Southeast Asia",
         "Japan East",
-        "Japan West",
-        "Southeast Asia"
+        "Japan West"
       ],
       "metadata": {
         "description": "The region in which to deploy the new resources"
