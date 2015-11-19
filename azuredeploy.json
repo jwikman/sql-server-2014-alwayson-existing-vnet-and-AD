@@ -469,7 +469,7 @@
           "sqlwVMName": { "value": "[variables('sqlwVMName')]" },
           "domainName": { "value": "[parameters('domainName')]" },
           "location": { "value": "[parameters('location')]" },
-          "sharePath": { "value": "[concat(parameters('dnsPrefix'),'-fsw')]" },
+          "sharePath": { "value": "[concat(parameters('vmNamePrefix'),'-fsw')]" },
           "adminUsername": { "value": "[parameters('adminUsername')]" },
           "adminPassword": { "value": "[parameters('adminPassword')]" },
           "assetLocation": { "value": "[parameters('assetLocation')]" }
@@ -493,6 +493,7 @@
         "parameters": {
           "sqlVMNamePrefix": { "value": "[variables('sqlClusterVmNamePrefix')]" },
           "domainName": { "value": "[parameters('domainName')]" },
+          "dnsPrefix": { "value": "[parameters('vmNamePrefix')]" },
           "sharePath": { "value": "[variables('sqlWitnessSharePath')]" },
           "sqlwVMName": { "value": "[variables('sqlwVMName')]" },
           "sqlLBName": { "value": "[variables('sqlLBName')]" },
