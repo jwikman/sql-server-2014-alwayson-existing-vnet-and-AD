@@ -156,7 +156,7 @@
       "metadata": {
         "description": "Name of an existing Admin user account for the Active Directory domain"
       },
-      "defaultValue": "sqlAdministrator"
+      "defaultValue": "AzureAdmin"
     },
 
     "adminPassword": {
