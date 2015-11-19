@@ -13,7 +13,7 @@ A SQL Server always on listener is created using the internal load balancer.
 
 For nested templates and DSC resources specific to SQL Server AlwaysOn, this template references these resources from this <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/sql-server-2014-alwayson-dsc">SQL Server AlwaysOn AG QuickStart</a> template repository.
 
-To deploy the required Azure VNET and Active Directory infrastructure, you may use <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc">this template</a>.
+To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc">this template</a>.
 
 # Known Issues
 
