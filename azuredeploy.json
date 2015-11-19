@@ -98,10 +98,10 @@
       }
     },
 
-    "virtualNetworkName": {
+    "virtualNetworkId": {
       "type": "string",
       "metadata": {
-        "description": "The name of the existing VNET"
+        "description": "Resource ID of the existing VNET"
       },
       "defaultValue": "vnet01"
     },
@@ -202,8 +202,7 @@
 
   "variables": {
 
-    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-    "sqlSubnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('sqlSubnetName'))]",
+    "sqlSubnetRef": "[concat(variables('virtualNetworkId'),'/subnets/',parameters('sqlSubnetName'))]",
 
     "sqlStorageName": "[concat(parameters('newStorageAccountNamePrefix'),'sqlsa')]",
     "sqlClusterTemplateURL": "[concat(parameters('assetLocation'),'/SqlClusterVmTemplate.json')]",
