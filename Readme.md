@@ -86,7 +86,7 @@ When deploying from this template, you will be prompted for the parameters liste
 |dataBaseNames|An array of database names. Each database will be created and added to the availability group|
 |assetLocation|Location of resources upon which this template is dependent, such as nested templates and DSC modules|
 
-## Other Notable Variables
+## Notable Variables
 
 |Name|Description|
 |:---|:---------------------|
@@ -95,3 +95,11 @@ When deploying from this template, you will be prompted for the parameters liste
 |lbFE|Load balancer front-end pool name|
 |lbBE|Load balancer back-endpool name|
 |sqlWitnessSharePath|Shared folder name for Witness|
+|windowsImagePublisher|The name of the pulisher of the AD and Witness Image|
+|windowsImageOffer|The Offer Name for the Image used by AD and Witness VMs|
+|windowsImageSKU|The Image SKU for the AD and Witness Image|
+|sqlImagePublisher|The name of the pulisher of the SQL Image|
+|sqlImageOffer|The Offer Name for the Image used by SQL|
+|sqlImageSKU|The Image SKU for the SQL Image|
+|windowsDiskSize|The size of the VHD allocated for AD and Witness VMs Data Disk|
+|sqlDiskSize|The size of the VHD allocated for SQL VMs Data and Log Disks|
