@@ -6,7 +6,7 @@
     "newStorageAccountNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The prefix of the new storage account created to store the SQL VMs disks. Three storage accounts will be created using this string as a prefix for the name"
+        "description": "The prefix of the new storage accounts created to store the SQL VM disks. Three storage accounts will be created using this string as a prefix for the name"
       }
     },
 
@@ -19,7 +19,7 @@
         "Premium_LRS"
       ],
       "metadata": {
-        "description": "The type of the Storage Account created"
+        "description": "The type of new Storage Accounts to be created to store the SQL VM disks"
       },
       "defaultValue": "Premium_LRS"
     },
@@ -27,7 +27,7 @@
     "vmNamePrefix": {
       "type": "string",
       "metadata": {
-        "description": "The Prefix for the SQL VMs"
+        "description": "The Prefix for the SQL VM names"
       }
     },
 
@@ -52,7 +52,7 @@
         "Standard_DS14"
       ],
       "metadata": {
-        "description": "The size of the SQL VMs Created"
+        "description": "The size of the SQL VM instances to be created"
       },
       "defaultValue": "Standard_DS3"
     },
@@ -78,7 +78,7 @@
         "Standard_DS14"
       ],
       "metadata": {
-        "description": "The size of the Witness VM Created"
+        "description": "The size of the Witness VM instance to be created"
       },
       "defaultValue": "Standard_DS1"
     },
@@ -120,10 +120,17 @@
       }
     },
 
+    "adPDCVMName": {
+      "type": "string",
+      "metadata": {
+        "description": "The computer name of an existing Active Directory domain controller & DNS Server"
+      }
+    },
+
     "primaryAdIpAddress": {
       "type": "string",
       "metadata": {
-        "description": "The IP address of Primary AD"
+        "description": "The IP address of the existing Primary AD domain controller"
       },
       "defaultValue": "10.0.0.4"
     },
@@ -131,7 +138,7 @@
     "secondaryIpAddress": {
       "type": "string",
       "metadata": {
-        "description": "The IP address of Secondary AD"
+        "description": "The IP address of the existing Secondary AD domain controller"
       },
       "defaultValue": "10.0.0.5"
     },
@@ -139,7 +146,7 @@
     "sqlLBIPAddress": {
       "type": "string",
       "metadata": {
-        "description": "The address of ILB for SQL Server AlwaysOn listener"
+        "description": "The address of ILB for the new SQL Server AlwaysOn listener to be created"
       },
       "defaultValue": "10.0.0.10"
     },
@@ -147,7 +154,7 @@
     "adminUsername": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Administrator of the VMs and Domain"
+        "description": "The name of the existing Administrator user account for the Active Directory domain"
       },
       "defaultValue": "sqlAdministrator"
     },
@@ -155,7 +162,7 @@
     "adminPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "The password for the Administrator account of the VMs and Domain"
+        "description": "The password for the existing Administrator user account for the Active Directory domain"
       }
     },
 
@@ -177,7 +184,7 @@
         "Southeast Asia"
       ],
       "metadata": {
-        "description": "The region in which to deploy the resources"
+        "description": "The region in which to deploy the new resources"
       }
     },
 
@@ -498,6 +505,7 @@
           "sqlwVMName": { "value": "[variables('sqlwVMName')]" },
           "sqlLBName": { "value": "[variables('sqlLBName')]" },
           "sqlLBIPAddress": { "value": "[parameters('sqlLBIPAddress')]" },
+          "dnsServerName": { "value": "[parameters('adPDCVMName')]" },
           "dataBaseNames": { "value": "[parameters('dataBaseNames')]" },
           "location": { "value": "[parameters('location')]" },
           "sqlServerServiceAccountUserName": { "value": "[parameters('sqlServerServiceAccountUserName')]" },
