@@ -102,8 +102,7 @@
       "type": "string",
       "metadata": {
         "description": "Resource ID of the existing VNET"
-      },
-      "defaultValue": "vnet01"
+      }
     },
 
     "sqlSubnetName": {
@@ -202,7 +201,7 @@
 
   "variables": {
 
-    "sqlSubnetRef": "[concat(variables('virtualNetworkId'),'/subnets/',parameters('sqlSubnetName'))]",
+    "sqlSubnetRef": "[concat(parameters('virtualNetworkId'),'/subnets/',parameters('sqlSubnetName'))]",
 
     "sqlStorageName": "[concat(parameters('newStorageAccountNamePrefix'),'sqlsa')]",
     "sqlClusterTemplateURL": "[concat(parameters('assetLocation'),'/SqlClusterVmTemplate.json')]",
