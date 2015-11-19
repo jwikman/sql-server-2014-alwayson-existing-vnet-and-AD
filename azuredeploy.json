@@ -135,7 +135,7 @@
       "defaultValue": "10.0.0.4"
     },
 
-    "secondaryIpAddress": {
+    "secondaryAdIpAddress": {
       "type": "string",
       "metadata": {
         "description": "IP address of the existing Secondary AD domain controller & DNS server"
@@ -361,7 +361,7 @@
             ]
           },
           "dnsServers": {
-            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryIpAddress')]" ]
+            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryAdIpAddress')]" ]
           }
 
         }
@@ -406,7 +406,7 @@
             ]
           },
           "dnsServers": {
-            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryIpAddress')]" ]
+            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryAdIpAddress')]" ]
           }
 
         }
@@ -452,7 +452,7 @@
             ]
           },
           "dnsServers": {
-            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryIpAddress')]" ]
+            "value": [ "[parameters('primaryAdIpAddress')]", "[parameters('secondaryAdIpAddress')]" ]
           }
 
         }

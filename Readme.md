@@ -60,14 +60,9 @@ New-AzureResourceGroup -Name "<new resourcegroup name>" -Location "<new resource
 
 ```
 
-You will be prompted for the following parameters
+## Template Parameters
 
-+ **newStorageAccountNamePrefix:** - specify the prefix for the new storage account names
-+ **locationFromTemplate:** - specify a valid location for the deployment
-+ **adminPassword:** - the administrator password for the VMs and Domain
-+ **sqlServerServiceAccountPassword:** the password for the account that SQL Server will run as
-
-## Notable Variables
+When deploying from this template, you will be prompted for the parameters listed below.
 
 |Name|Description|
 |:---|:---------------------|
@@ -90,3 +85,13 @@ You will be prompted for the following parameters
 |location|Region in which to deploy the new resources|
 |dataBaseNames|An array of database names. Each database will be created and added to the availability group|
 |assetLocation|Location of resources upon which this template is dependent, such as nested templates and DSC modules|
+
+## Other Notable Variables
+
+|Name|Description|
+|:---|:---------------------|
+|sqlLBName|Resource name of the SQL ILB|
+|sqlAvailabilitySetName|Name for Azure availability set for SQL and Witness VMs|
+|lbFE|Load balancer front-end pool name|
+|lbBE|Load balancer back-endpool name|
+|sqlWitnessSharePath|Shared folder name for Witness|
