@@ -216,7 +216,11 @@
 
   "variables": {
 
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-01-01",
+    "apiVersionNetworks": "2015-06-15",
+    "apiVersionVirtualMachines": "2015-12-01",
+    "apiVersionVMExtensions": "2015-06-15",
+    "apiVersionStorage": "2015-12-01",
 
     "sqlSubnetRef": "[concat(parameters('existingVirtualNetworkId'),'/subnets/',parameters('existingSqlSubnetName'))]",
 
@@ -278,14 +282,14 @@
     {
       "type": "Microsoft.Compute/availabilitySets",
       "name": "[variables('sqlAvailabilitySetName')]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "location": "[parameters('location')]"
     },
 
     {
       "name": "[variables('deploySqlClusterVms')]",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
+      "apiVersion": "[variables('apiVersion')]",
       "dependsOn": [
         "[resourceId('Microsoft.Compute/availabilitySets', variables('sqlAvailabilitySetName'))]"
       ],
