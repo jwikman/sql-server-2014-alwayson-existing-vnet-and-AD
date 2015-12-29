@@ -30,8 +30,7 @@
       "maxLength": 8,
       "metadata": {
         "description": "Naming prefix for each VM name. 8-char max, lowercase alpha"
-      },
-      "defaultValue": "xxxsql"
+      }
     },
 
     "sqlVMSize": {
