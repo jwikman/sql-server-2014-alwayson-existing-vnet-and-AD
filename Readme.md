@@ -11,13 +11,7 @@ This template creates the following resources:
 
 A SQL Server always on listener is created using the internal load balancer.
 
-For nested templates and DSC resources specific to SQL Server AlwaysOn, this template references these resources from this <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/sql-server-2014-alwayson-dsc">SQL Server AlwaysOn AG QuickStart</a> template repository.
-
 To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc">this template</a>.
-
-# Known Issues
-
-This template is serial in nature for deploying some of the resources, due to some issues between the platform agent and the DSC extension which cause problems when multiple VM and\or extension resources are deployed concurrently.
 
 ## Notes
 
@@ -41,41 +35,16 @@ Click the button below to deploy from the portal
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-
 ## Deploying from PowerShell
 
 For details on how to install and configure Azure Powershell see [here].(https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/)
 
 Launch a PowerShell console
 
-Ensure that you are in Resource Manager Mode
-
-```PowerShell
-
-Switch-AzureMode AzureResourceManager
-
-```
 Change working folder to the folder containing this template
 
 ```PowerShell
 
-New-AzureResourceGroup -Name "<new resourcegroup name>" -Location "<new resourcegroup location>"  -TemplateParameterFile .\azuredeploy-parameters.json -TemplateFile .\azuredeploy.json
+New-AzureRmResourceGroup -Name "<new resourcegroup name>" -Location "<new resourcegroup location>"  -TemplateParameterFile .\azuredeploy-parameters.json -TemplateFile .\azuredeploy.json
 
 ```
-## Notable Variables
-
-|Name|Description|
-|:---|:---------------------|
-|sqlLBName|Resource name of the SQL ILB|
-|sqlAvailabilitySetName|Name for Azure availability set for SQL and Witness VMs|
-|lbFE|Load balancer front-end pool name|
-|lbBE|Load balancer back-endpool name|
-|sqlWitnessSharePath|Shared folder name for Witness|
-|windowsImagePublisher|The name of the pulisher of the AD and Witness Image|
-|windowsImageOffer|The Offer Name for the Image used by AD and Witness VMs|
-|windowsImageSKU|The Image SKU for the AD and Witness Image|
-|sqlImagePublisher|The name of the pulisher of the SQL Image|
-|sqlImageOffer|The Offer Name for the Image used by SQL|
-|sqlImageSKU|The Image SKU for the SQL Image|
-|windowsDiskSize|The size of the VHD allocated for AD and Witness VMs Data Disk|
-|sqlDiskSize|The size of the VHD allocated for SQL VMs Data and Log Disks|

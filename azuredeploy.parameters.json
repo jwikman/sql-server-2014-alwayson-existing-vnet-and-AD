@@ -1,53 +1,15 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
+
   "parameters": {
-    "newStorageAccountNamePrefix": {
-      "value": "xxxsql"
+
+    "namePrefix": {
+      "value": "GEN-UNIQUE-8"
     },
 
-    "storageAccountType": {
-      "value": "Premium_LRS"
-    },
-
-    "vmNamePrefix": {
-      "value": "xxxsql"
-    },
-
-    "sqlVMSize": {
-      "value": "Standard_DS3"
-    },
-
-    "sqlWitnessVMSize": {
-      "value": "Standard_DS1"
-    },
-
-     "existingDomainName": {
+    "existingDomainName": {
       "value": "contoso.com"
-    },
-
-     "existingAdPDCVMName": {
-      "value": "xxxvmad01"
-    },
-
-     "existingPrimaryAdIpAddress": {
-      "value": "10.0.0.4"
-    },
-
-     "existingSecondaryAdIpAddress": {
-      "value": "10.0.0.5"
-    },
-
-     "sqlLBIPAddress": {
-      "value": "10.0.0.10"
-    },
-
-    "existingVirtualNetworkId": {
-      "value": "/subscriptions/..."
-    },
-
-    "existingSqlSubnetName": {
-      "value": "default"
     },
 
     "adminUsername": {
@@ -55,15 +17,28 @@
     },
 
     "adminPassword": {
-      "value": "P!1#####"
+      "value": "GEN-PASSWORD"
+    },
+
+    "sqlServerServiceAccountUserName": {
+      "value": "sqlservice"
     },
 
     "sqlServerServiceAccountPassword": {
-      "value": "P!1#####"
+      "value": "GEN-PASSWORD"
     },
 
-    "location": {
-      "value": "Southeast Asia"
+     "existingVirtualNetworkId": {
+      "value": "/subscriptions/..."
+    },
+
+    "existingSqlSubnetName": {
+      "value": "default"
+    },
+
+    "existingAdPDCVMName": {
+      "value": "xxxvmad01"
     }
+
   }
 }
