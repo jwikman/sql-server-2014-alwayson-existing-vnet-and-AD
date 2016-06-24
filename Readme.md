@@ -11,7 +11,7 @@ This template creates the following resources:
 
 A SQL Server always on listener is created using the internal load balancer.
 
-To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc">this template</a>.
+To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use the *DeployADOnly.json* template that is also located in this project. Alternatively, use the *DeployAD+SQL.json* template to deploy both AD and SQL together.
 
 ## Notes
 
