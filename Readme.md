@@ -27,7 +27,7 @@ To deploy the required Azure VNET and Active Directory infrastructure, if not al
 
 +	To successfully deploy this template, be sure that the subnet to which the SQL VMs are being deployed already exists on the specified Azure virtual network, AND this subnet should be defined in Active Directory Sites and Services for the appropriate AD site in which the closest domain controllers are configured.
 
-+ To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc">this template</a>.
++ To deploy the required Azure VNET and Active Directory infrastructure, if not already in place, you may use the *DeployADOnly.json* template that is also located in this project. Alternatively, use the *DeployAD+SQL.json* template to deploy both AD and SQL together.
 
 Click the button below to deploy from the portal
 
