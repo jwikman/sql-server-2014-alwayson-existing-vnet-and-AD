@@ -84,6 +84,7 @@
                "configurationFunction" : "[variables('sqlAOPrepareConfigurationFunction')]",
                "properties" : {
                   "domainName" : "[parameters('domainName')]",
+                  "domainNetbiosName" : "[parameters('domainNetbiosName')]",
                   "sqlAlwaysOnEndpointName" : "[parameters('sqlAlwaysOnEndpointName')]",
                   "adminCreds" : {
                      "userName" : "[parameters('adminUserName')]",
@@ -92,8 +93,7 @@
                   "sqlServiceCreds" : {
                      "userName" : "[parameters('sqlServerServiceAccountUserName')]",
                      "password" : "PrivateSettingsRef:sqlServerServiceAccountPassword"
-                  },
-                  "domainNetbiosName" : "[parameters('domainNetbiosName')]"
+                  }
                }
             },
             "protectedSettings" : {
@@ -123,6 +123,7 @@
                "configurationFunction" : "[variables('createClusterConfigurationFunction')]",
                "properties" : {
                   "domainName" : "[parameters('domainName')]",
+                  "domainNetbiosName" : "[parameters('domainNetbiosName')]",
                   "clusterName" : "[variables('clusterName')]",
                   "sharePath" : "[concat('\\\\',parameters('sqlWitnessVMName'),'\\',parameters('sharePath'))]",
                   "nodes" : [
